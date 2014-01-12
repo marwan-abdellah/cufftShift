@@ -29,19 +29,31 @@ PROJECT(cufftShift)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
 #########################################################
-#! Add CMake customized modules
+#! CMake customized modules
 #########################################################
 SET(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/CMake)
+
+### Link to the SRC directory
+SET(SRC_DIR ${CMAKE_SOURCE_DIR}/Src/)
+
+#########################################################
+#! Headers
+#########################################################
+
+LIST(APPEND CMAKE_INCLUDE_CURRENT_DIR ${SRC_DIR}/CXX)
+LIST(APPEND CMAKE_INCLUDE_CURRENT_DIR ${SRC_DIR}/CXX_Utils)
+LIST(APPEND CMAKE_INCLUDE_CURRENT_DIR ${SRC_DIR}/GPU_Utils)
+LIST(APPEND CMAKE_INCLUDE_CURRENT_DIR ${SRC_DIR}/Interfaces)
 
 #########################################################
 #! Add CMake customized modules
 #########################################################
-SET(CXX_LIST )
+SET(CXX_LIST main.cpp)
 
 #########################################################
 #! Doxygen documentation
 #########################################################
-ADD_SUBDIRECTORY(Doc)
+# ADD_SUBDIRECTORY(Doc)
 
 #########################################################
 #! Compiler Flags

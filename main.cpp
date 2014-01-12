@@ -8,6 +8,7 @@ int main()
     return 0;
 }
 
+/*
 template < class T >
 T* cufftShift_1D ( const T* dataArray, const int length )
 {
@@ -58,4 +59,4 @@ void cufftShift_3D ( T* dataArray, const int lenght, const int height, const int
 {
     // Implementaion
 }
-
+*/
