@@ -1,5 +1,5 @@
 #####################################################################
-# Copyright © 2011-2012,
+# Copyright © 2011-2014,
 # Marwan Abdellah: <abdellah.marwan@gmail.com>
 #
 # This library is free software; you can redistribute it and/or
@@ -20,7 +20,11 @@
 # CUDA SDK root directory
 MARK_AS_ADVANCED(CUDA_SDK_ROOT)
 
-SET(CUDA_SDK_ROOT "opt/NVIDIA_GPU_Computing_SDK")
+IF(APPLE)
+    SET(CUDA_SDK_ROOT "/Developer/NVIDIA_GPU_Computing_SDK")
+ELSE(APPLE)
+    SET(CUDA_SDK_ROOT "/home/abdellah/NVIDIA_GPU_Computing_SDK")
+ENDIF(APPLE)
 
 # SDK include directory
 SET(CUDA_SDK_INC_DIR "${CUDA_SDK_ROOT}/C/common/inc")
@@ -37,7 +41,6 @@ FIND_LIBRARY(LIB_CUTIL NAMES cutil_x86_64
         /opt/local/lib
     )
 
-message(cutil---> ${CUDA_SDK_LIB_DIR})
 # Add the include directories to the system tree
 INCLUDE_DIRECTORIES(${CUDA_SDK_INC_DIR})
 
