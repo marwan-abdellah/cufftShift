@@ -2,7 +2,7 @@
 # Copyright © 2011-2014,
 # Marwan Abdellah: <abdellah.marwan@gmail.com>
 #
-# This library is free software; you can redistribute it and/or
+# This library (cufftShift) is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
 # License as published by the Free Software Foundation.
 
@@ -63,9 +63,6 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/Src/CUDA/Interfaces/out-of-place
 #! Include internal CMake files
 #########################################################
 INCLUDE(${CMAKE_CURRENT_SOURCE_DIR}/Src/Src.cmake)
-
-# @ Compile kernels via NVCC
-INCLUDE(${CMAKE_SOURCE_DIR}/interfaces/kernels.cmake)
 
 SET(CUDA_SOURCES "")
 LIST(APPEND CUDA_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/Src/CUDA/Interfaces/in-place/cufftShift_1D_IP_impl.cu)
